@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tekton-docker
+  namespace: tekton-lab
+  annotations:
+    tekton.dev/docker-0: registry.hub.docker.com/<username>
+  labels:
+    service-account: tekton-docker-sa
+type: kubernetes.io/basic-auth
+stringData:
+  namespace: tekton-lab
+  username: <username>
+  password: <token>

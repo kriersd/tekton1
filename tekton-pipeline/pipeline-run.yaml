@@ -1,0 +1,26 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: tutorial-pipeline-run-17
+spec:
+  serviceAccount: tekton-lab-sa
+  pipelineRef:
+    name: tutorial-pipeline
+  resources:
+    - name: tekton1-git
+      resourceRef:
+        name: tekton1-git
+    - name: tekton1-image
+      resourceRef:
+        name: tekton1-image
+  params:
+    - name: BUILDER_IMAGE
+      value: quay.io/buildah/stable:v1.11.0
+    - name: DOCKERFILE
+      value: ./Dockerfile
+    - name: TLSVERIFY
+      value: "false"
+    - name: pathToContext
+      value: /workspace/tekton1-git
+    - name: targetNamespace
+      value: tekton-lab

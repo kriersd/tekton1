@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: deploy-cm
+spec:
+  inputs:
+    resources:
+      - name: docker-source
+        type: git
+    params:
+      - name: pathToContext
+        type: string
+        default: /workspace/docker-source
+      - name: targetNamespace
+        type: string
+        default: phonebook
+  steps:
+    - name: oc-service
+      image: quay.io/openshift/origin-cli:latest
+      env:
+        - name: REG_PWD
+          valueFrom:
+            secretKeyRef:
+              name: myphonebook-tekton-deployer-secret
+              key: token
+      command: ["/bin/bash", "-c"]
+      args:
+        - oc apply -f ${inputs.params.pathToContext}/kubernetes/ui_cm.yml --token=$REG_PWD -n ${inputs.params.targetNamespace}

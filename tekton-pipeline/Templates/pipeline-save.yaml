@@ -1,0 +1,38 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: tutorial-pipeline
+spec:
+  resources:
+    - name: tekton1-git
+      type: git
+    - name: tekton1-image
+      type: image
+  params:
+    - name: BUILDER_IMAGE
+      description: Image used to do the build
+      default: quay.io/buildah/stable:v1.11.0
+    - name: DOCKERFILE
+      description: Location of the docker file
+      default: ./Dockerfile
+    - name: TLSVERIFY
+      description: True or False for TLS Verificatoin
+      default: "false"
+  tasks:
+    - name: build-push
+      taskRef:
+        name: buildah
+      params:
+        - name: BUILDER_IMAGE
+          value: "$(params.BUILDER_IMAGE)"
+        - name: DOCKERFILE
+          value: "$(params.DOCKERFILE)"
+        - name: TLSVERIFY
+          value: "$(params.TLSVERIFY)"
+      resources:
+        inputs:
+          - name: tekton1-git
+            resource: tekton1-git
+        outputs:
+          - name:  tekton1-image
+            resource: tekton1-image

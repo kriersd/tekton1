@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: deploy-cm
+spec:
+  inputs:
+    resources:
+      - name: tekton1-git
+        type: git
+    params:
+      - name: pathToContext
+        type: string
+        default: /workspace/tekton1-git
+      - name: targetNamespace
+        type: string
+        default: tekton-lab
+  steps:
+    - name: oc-service
+      image: quay.io/openshift/origin-cli:latest
+      env:
+        - name: REG_PWD
+          valueFrom:
+            secretKeyRef:
+              name: tekton-lab-deployer-secret
+              key: token
+      command: ["/bin/bash", "-c"]
+      args:
+        - oc apply -f $(inputs.params.pathToContext)/tekton-pipeline/deployment.yaml --token=$REG_PWD -n $(inputs.params.targetNamespace)

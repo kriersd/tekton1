@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: tekton1-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: registry.hub.docker.com/davekrier/tekton1:latest
