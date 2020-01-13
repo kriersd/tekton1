@@ -2,4 +2,5 @@
 ./tekton-pipeline/git-sec-dk.yaml
 token.txt
 tekton-pipeline/git-sec-dk.yaml
+tekton-pipeline/deployment.yaml
 tekton-pipeline/docker-sec-dk.yaml
