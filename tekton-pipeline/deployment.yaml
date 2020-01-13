@@ -5,7 +5,7 @@ metadata:
     app: tekton1
   name: tekton1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: tekton1
