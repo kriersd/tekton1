@@ -1,3 +1,6 @@
+---
+# This the deployment YAML
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,3 +24,20 @@ spec:
         name: tekton1
         resources: {}
 status: {}
+---
+# This the service yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: tekton1
+  name: testingsvc
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: tekton1
+  type: LoadBalancer

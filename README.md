@@ -193,7 +193,6 @@ You should now see the Tekton Pipeline running in the GUI. Green is good!!
 > More information on the variable formats can be found here. 
 
 > [https://github.com/tektoncd/pipeline/issues/850](https://github.com/tektoncd/pipeline/issues/850)
-
   
 > **NOTE:**  *Be carful not to commit any sensitive information such as tokens, userid's or password's to the GitHub repository. You can create a .gitignore file and list out the files that contain your sensitive information.*
 > 
@@ -202,5 +201,13 @@ You should now see the Tekton Pipeline running in the GUI. Green is good!!
 > **How to rebase your master in GIT - In case you added files you didn't want to add and it's it the history.**
 
 > [https://tecadmin.net/delete-commit-history-in-github/](https://tecadmin.net/delete-commit-history-in-github/)
+
+**Common Problems**
+
+* Ran into errors with the BUILD (within Buildah on the tekton pipeline) - The Build Step seems to hit a permission problem. Below is the error message I see in the Tekton Pipleline logs for the build step. 
+
+	**STEP 5: COPY**. *.error building at STEP "COPY . .": error copying "/workspace/tekton1-git" to "/var/lib/containers/storage/overlay/c495ced1e80c26b3dab3467b01326807dc457f16f5f3aa8a1fa21a220ae9c8ac/merged/usr/src/app": Error processing tar file(exit status 1): permission denied*
+	
+	To resolve this, I had to add the node_modules directory to the .gitignore file. There seems to be a tar file in that directory that the Buildah builder can't handle. 
 
 
