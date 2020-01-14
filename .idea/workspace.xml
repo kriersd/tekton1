@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2830cfdd-3a05-4f59-8ffa-b8e3f21d3975" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tekton-pipeline/pipeline-run.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tekton-pipeline/pipeline-run.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitignore-example" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <workItem from="1578498362355" duration="7262000" />
       <workItem from="1578579370172" duration="12483000" />
       <workItem from="1578957802621" duration="1763000" />
-      <workItem from="1578960548783" duration="8657000" />
+      <workItem from="1578960548783" duration="8994000" />
     </task>
     <servers />
   </component>
