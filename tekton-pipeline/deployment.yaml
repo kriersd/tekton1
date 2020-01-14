@@ -32,7 +32,7 @@ kind: Service
 metadata:
   labels:
     app: tekton1
-  name: testingsvc
+  name: tekton1-svc
 spec:
   ports:
     - port: 3000
