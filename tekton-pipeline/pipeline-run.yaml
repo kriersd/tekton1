@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: tutorial-pipeline-run-17
+  name: tutorial-pipeline-run-20
 spec:
   serviceAccount: tekton-lab-sa
   pipelineRef:

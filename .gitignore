@@ -2,3 +2,7 @@ token.txt
 tekton-pipeline/git-sec-dk.yaml
 tekton-pipeline/docker-sec-dk.yaml
 tekton-pipeline/deployment.yaml
+
+# Dependency directories
+node_modules/
+jspm_packages/

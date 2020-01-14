@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2830cfdd-3a05-4f59-8ffa-b8e3f21d3975" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tekton-pipeline/pipeline-run.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tekton-pipeline/pipeline-run.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,7 @@
       <workItem from="1578498362355" duration="7262000" />
       <workItem from="1578579370172" duration="12483000" />
       <workItem from="1578957802621" duration="1763000" />
-      <workItem from="1578960548783" duration="4783000" />
+      <workItem from="1578960548783" duration="8657000" />
     </task>
     <servers />
   </component>
@@ -125,10 +127,10 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="376" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.976@0.23.1680.976" timestamp="1578964169288" />
-    <state x="710" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578965130426">
+    <state x="710" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579021156294">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="710" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.976@0.23.1680.976" timestamp="1578965130426" />
+    <state x="710" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.976@0.23.1680.976" timestamp="1579021156294" />
     <state width="1379" height="250" key="GridCell.Tab.0.bottom" timestamp="1578962283268">
       <screen x="0" y="23" width="1680" height="976" />
     </state>

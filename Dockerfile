@@ -1,4 +1,6 @@
-FROM node:10
+#FROM node:10
+#USER node
+FROM node:latest
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -14,5 +16,8 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
+
+# At the end, set the user to use when running this image
+USER node
 
 CMD [ "npm", "start" ]
