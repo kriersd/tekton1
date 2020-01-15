@@ -1,8 +1,12 @@
 # Cloud Pak for Applications - Tekton Lab
 
-This is a step by step guide to walk you through a quick example of how to create a Tekton pipeline to automate the build, push, and deploy a simple Node.Js application on Openshift. 
+This is a step by step guide to walk you through a quick example of how to create a Tekton pipeline to automate the build, push, and deploy a simple Node.Js application on Openshift. This example uses Buildah as the docker build engine. There are other options for the docker build engine, so it shoudl be noted that this is not the only way to accomplish our task. 
 
-### Here is what you need. 
+![](./readme-images/tekton-logo.png)
+
+![](./readme-images/buildah-icon.png)
+
+## Here is what you need. 
 
 * **Cloud Pak for Applications deployment**
 
@@ -13,10 +17,26 @@ This is a step by step guide to walk you through a quick example of how to creat
 * **OpenShift CLI** ([Install Instructions](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html#installing-the-cli)) 
 * **Pull the contents of this repo down to your local machine**
 
+## What is all this Tekton stuff??
 
-### What exactly are we building here??
+![](./readme-images/pipeline-concepts.png)
 
-This is how I learned how to setup security roles and running deployments in TASKS
+Let me try and explain in a bit more detail what makes up a Tekton Pipeline. As explained above, all objects within a Tekton pipeline are Kubernetes objects. Pipelines have tasks, which are actually a CRD that runs a container. Within the task you define steps, which are commands that you will run inside the container. Pipelines normally have resources accocated with them, which can be accessed by all tasks within that pipeine. It should be noted that tasks can be used within multiple pipelines, so it's good practice to use pipeline resources to define the resources used, such as github repositories or docker hub image definitions. 
+
+![](./readme-images/pipeline-outline.png)
+
+
+## What exactly are we building here??
+
+Here we will deploy a Tekton Pipeline along with Pipeline Resources, and two Task objects. The pipeline will pull our source code from Github and build the Docker image. The image will be pushed to your Docker Hub repository once it is built. Lastly, the pipeline will run the task that deploys this image to your Openshift (Kubernetes) runtime. 
+
+There are a few things you will need to configure along with the pipeline, such as secrets and a service account. We will walk you through all the steps, but you should take some time to learn more about the security roles the are assocated with your service account. I have included a link to some additional information below. 
+
+Here is a diagram of what we are going to build. 
+
+![](./readme-images/what-are-we-building.png)
+
+This is how I learned how to setup security roles and running deployments in TASKS. This is not required reading, but I do recommend you review this article. It's got some good tips. 
 
 [https://medium.com/@jerome_tarte/first-pipeline-with-tekton-on-ibm-cloud-pak-for-application-e82ea7b8a6b1](https://medium.com/@jerome_tarte/first-pipeline-with-tekton-on-ibm-cloud-pak-for-application-e82ea7b8a6b1)
 
