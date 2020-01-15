@@ -2,9 +2,7 @@
 
 This is a step by step guide to walk you through a quick example of how to create a Tekton pipeline to automate the build, push, and deploy a simple Node.Js application on Openshift. This example uses Buildah as the docker build engine. There are other options for the docker build engine, so it shoudl be noted that this is not the only way to accomplish our task. 
 
-![](./readme-images/tekton-logo.png)
-
-![](./readme-images/buildah-icon.png)
+![](./readme-images/tekton-buildah.png)
 
 ## Here is what you need. 
 
