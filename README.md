@@ -17,12 +17,13 @@ This is a step by step guide to walk you through a quick example of how to creat
 
 ## What is all this Tekton stuff??
 
+
 ![](./readme-images/pipeline-concepts.png)
 
-![](./readme-images/pipeline-outline.png)
 
 Let me try and explain in a bit more detail what makes up a Tekton Pipeline. As explained above, all objects within a Tekton pipeline are Kubernetes objects. Pipelines have tasks, which are actually a CRD that runs a container. Within the task you define steps, which are commands that you will run inside the container. Pipelines normally have resources accocated with them, which can be accessed by all tasks within that pipeine. It should be noted that tasks can be used within multiple pipelines, so it's good practice to use pipeline resources to define the resources used, such as github repositories or docker hub image definitions. 
 
+![](./readme-images/pipeline-outline.png)
 
 ## What exactly are we building here??
 
