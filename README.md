@@ -14,6 +14,7 @@ This is a step by step guide to walk you through a quick example of how to creat
 * **Docker Hub Access Token** ([Here is how you get one](https://docs.docker.com/docker-hub/access-tokens/))
 * **OpenShift CLI** ([Install Instructions](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html#installing-the-cli)) 
 * **Pull the contents of this repo down to your local machine**
+	* You will need to create your own GitHub Repository with the contents of this repository. 
 
 ## What is all this Tekton stuff??
 
