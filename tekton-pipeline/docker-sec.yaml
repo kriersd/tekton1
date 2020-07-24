@@ -6,7 +6,7 @@ metadata:
   annotations:
     tekton.dev/docker-0: registry.hub.docker.com/<username>
   labels:
-    service-account: tekton-docker-sa
+    service-account: tekton-sa
 type: kubernetes.io/basic-auth
 stringData:
   namespace: tekton-lab

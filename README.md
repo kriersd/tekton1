@@ -111,7 +111,7 @@ We are now going to add privileged access to this service account. You need this
 > **NOTE** Please take note that the -n and -z params on this command are in reference to the namespace and service account name. If you used a custom project name then the -n value will be your project name (namespace) and the -z will be your custom name for the service account. 
 
 ```
-   oc adm policy add-scc-to-user privileged -n tekton-lab -z tekton-lab-sa
+   oc adm policy add-scc-to-user privileged -n tekton-lab -z tekton-sa
 ```
 
 **6.) Created Resources using YAML**
@@ -130,12 +130,12 @@ Edit the tekton pipeline resource files with your account information and create
 
 **7.) Create Secret with Login Token**
 
-We need to create a NEW secret with the login token for the tekton-lab-sa service account. We need to use this account for an automated login for the deploy task. We will first run a command to get the token and store it in a file (token.txt). The second command will create a secret using that token. The deploy task will use the token within this secret to login and issue the deploy command. 
+We need to create a NEW secret with the login token for the tekton-sa service account. We need to use this account for an automated login for the deploy task. We will first run a command to get the token and store it in a file (token.txt). The second command will create a secret using that token. The deploy task will use the token within this secret to login and issue the deploy command. 
 
 If you used a customized project name and/or service account name you will need to modify the command below. 
 
 ```
-  oc get secret $(oc get secret -n tekton-lab | grep tekton-lab-sa-token | head -1 | awk '{print $1}') -n tekton-lab -o jsonpath="{.data.token}" | base64 -D > token.txt
+  oc get secret $(oc get secret -n tekton-lab | grep tekton-sa-token | head -1 | awk '{print $1}') -n tekton-lab -o jsonpath="{.data.token}" | base64 -D > token.txt
 ```
 
 ```
@@ -146,12 +146,12 @@ If you used a customized project name and/or service account name you will need 
 
 **8.) Adding Role to allow for deployments**
 
-We need to add the tekton-lab-sa service account to the EDIT role, so that it has the proper authorty to make the deployment. This happens within the deployment task during the pipeline execution. 
+We need to add the tekton-sa service account to the EDIT role, so that it has the proper authorty to make the deployment. This happens within the deployment task during the pipeline execution. 
 
 > **NOTE:** If you used a customized project name and/or service account name you will need to modify the command below. 
 
 ```
-  oc adm policy add-role-to-user edit -n tekton-lab -z tekton-lab-sa
+  oc adm policy add-role-to-user edit -n tekton-lab -z tekton-sa
 ```
 
 

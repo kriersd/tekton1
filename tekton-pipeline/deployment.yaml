@@ -20,7 +20,7 @@ spec:
         app: tekton1
     spec:
       containers:
-      - image: davekrier/tekton1:latest
+      - image: <dockerhub userid>/tekton1:latest
         name: tekton1
         resources: {}
 status: {}
